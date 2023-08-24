@@ -1,0 +1,24 @@
+﻿<Window x:Class="buku_rumpin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:buku_rumpin"
+        xmlns:views="clr-namespace:buku_rumpin.Views"
+        xmlns:vms="clr-namespace:buku_rumpin.ViewModels"
+        mc:Ignorable="d"
+        FontSize="16"
+        Title="MainWindow" Height="720" Width="1280">
+    <Grid Margin="25 25 25 25">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:AddBookViewModel}">
+                <views:AddBookView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:BookListViewModel}">
+                <views:BookListView/>
+            </DataTemplate>
+        </Grid.Resources>
+        
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Window>
